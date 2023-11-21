@@ -1,0 +1,56 @@
+import java.util.Random;
+public class questFourFour {
+	public static void main(String args[]) {
+		final int TAM=3;
+		int a[][], i, j, col=0, menor=0, maior=0, posilinha=0, posicoluna=0;
+		a = new int [TAM][TAM];
+		Random in = new Random();
+		
+		for(i=0;i<TAM;i++) {
+			for(j=0;j<TAM;j++) {
+				a[i][j] = in.nextInt()%50;
+			}
+		}
+		
+		
+		for(i=0;i<TAM;i++) {
+			for(j=0;j<TAM;j++) {
+				System.out.print(a[i][j]+" ");
+				col++;
+			}
+			if(col>=TAM) {
+				System.out.print("\n");
+				col=0;
+			}	else {}
+		}
+		
+		System.out.print("\n");
+		
+		
+		
+		for(i=0;i<TAM;i++) {
+			for(j=0;j<TAM;j++) {
+				if(a[i][j]<menor) {
+					menor = a[i][j];
+					posilinha = i;
+					posicoluna = j;
+				}	else {}
+			}
+		}
+		
+		System.out.println(menor+" é o menor número da matriz, se encontrando na posição ("+(posilinha+1)+ ","+(posicoluna+1)+").\n");
+		
+		
+		for(i=0;i<TAM;i++) {
+			for(j=0;j<TAM;j++) {
+				if(a[i][j]>maior) {
+					maior = a[i][j];
+					posilinha = i;
+					posicoluna = j;
+				}	else {}
+			}
+		}
+		
+		System.out.println(maior+" é o maior número da matriz, se encontrando na posição ("+(posilinha+1)+ ","+(posicoluna+1)+").\n");
+}
+}
